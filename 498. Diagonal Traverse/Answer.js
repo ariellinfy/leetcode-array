@@ -18,7 +18,7 @@ var findDiagonalOrder = function(matrix) {
         while (x + y === i) {
             temp.push(matrix[x][y]);
             count++;
-            while (count !== len && len <= Math.min(m+1, n+1)) {
+            while (count !== len) {
                 x++;
                 y--;
                 temp.push(matrix[x][y]);
@@ -28,13 +28,23 @@ var findDiagonalOrder = function(matrix) {
                 b++;
                 x = 0;
                 y = b;
-                len++;
+                if (m === n) {
+                    len++;
+                } else {
+                    if (len < Math.min(m+1, n+1)) {
+                        len++;
+                    }
+                }
             } else {
                 a++;
                 x = a;
                 y = b;
-                if (len > Math.max(m, n)) {
+                if (m === n) {
                     len--;
+                } else {
+                    if (i >= Math.max(m, n)) {
+                        len--;
+                    }
                 }
             }
             break;
