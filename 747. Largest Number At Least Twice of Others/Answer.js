@@ -5,7 +5,6 @@ var dominantIndex = function(nums) {
             largest = i;
         }        
     };
-    debugger;
     for (let j = nums.length - 1; j >= 0; j--) {
         if (largest !== j && nums[largest] < 2 * nums[j]) {
             return -1;
@@ -13,6 +12,3 @@ var dominantIndex = function(nums) {
     }
     return largest;
 };
-
-a = [0,2,0,1];
-dominantIndex(a);
