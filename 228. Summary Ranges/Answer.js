@@ -1,0 +1,3 @@
+var summaryRanges = function(nums) {
+    
+};
